@@ -12,21 +12,20 @@ function preload() {
   gridImages[2] = loadImage("./assets/bhoot2.png")
   gridImages[3] = loadImage("./assets/bhoot3.png")
 
-}
+  console.log(gridImages);
 
-function preload() {
   gridImages2[0] = loadImage("./assets/bhoot0a.png")
   gridImages2[1] = loadImage("./assets/bhoot1a.png")
   gridImages2[2] = loadImage("./assets/bhoot2a.png")
   gridImages2[3] = loadImage("./assets/bhoot3a.png")
-}
 
-function preload() {
   gridImages3[0] = loadImage("./assets/bhootnew0.png")
   gridImages3[1] = loadImage("./assets/bhootnew1.png")
   gridImages3[2] = loadImage("./assets/bhootnew2.png")
   gridImages3[3] = loadImage("./assets/bhootnew3.png")
 }
+
+
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
@@ -40,30 +39,31 @@ function setup() {
 // ATTEMPT 1
 function mousePressed() {
 
-background(0);
+  background(0);
 
- tint(random(0, 255))
+  tint(colors[floor(random(0, colors.length))])
 
   for (let i = 0; i < width; i += gsize) {
     for (let j = 0; j < height; j += gsize) {
 
       let choice = floor(random(0, gridImages.length))
-  
+
       image(gridImages[choice], i, j, gsize, gsize)
     }
   }
 
 }
-  
+
 
 /*
+
 // ATTEMPT 2
 
 function mousePressed() {
 
-background(0);
+background(random(0, 255));
 
- tint(random(0, 255))
+ 
 
   for (let i = 0; i < width; i += gsize) {
     for (let j = 0; j < height; j += gsize) {
@@ -75,8 +75,8 @@ background(0);
   }
 
 }
-  
 
+*/
 /*
 //ATTEMPT 3
 
@@ -95,4 +95,4 @@ background(0);
   }
 
 }
-*/
+  */
